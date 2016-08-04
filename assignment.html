@@ -1,0 +1,30 @@
+<ion-view title="Assignment">
+	<ion-nav-buttons side="right">
+		<button menu-toggle="right"class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+
+	<nov-content>
+		<h1>{{assignment.name}}</h1>
+		<nov-frame class="assignment">
+			Due {{assignment.dueDate}}
+		</nov-frame>
+
+		<!--If the assignment has been submitted, show the submissions.-->
+		<nov-frame class="submissions">
+			<span ng-repeat="submission in submissions">
+				<h1>Grade</h1> {{submission.grade}}
+				<h1>Comment</h1> {{submission.comment}}
+				<h1>Submitted date:</h1> date
+			</span>
+			<hr ng-if="submissions.length > 0">
+
+			<span>
+				<h1>Worth {{assignment.weight}}%</h1>
+				<h1>Add a Comment</h1> <textarea ng-model="comment"></textarea>
+				<!--Button text is 'Resubmit' if there are submissions-->
+				<button>Browse</button> <button ng-if="submissions.length==0">Submit</button> <button ng-if="submissions.length > 0">Resubmit</button>
+			</span>
+		</nov-frame>
+	</nov-content>
+
+</ion-view>

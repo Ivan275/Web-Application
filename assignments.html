@@ -1,0 +1,25 @@
+<ion-view title="Assignments">
+	<ion-nav-buttons side="right">
+		<button menu-toggle="right"class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+
+	<nov-content>
+		<h1>Upcoming</h1>
+		<nov-frame class="assignments"
+			   ng-repeat="assignment in assignments | upcomingAssignments">
+					<a href="#/app/courses/{{ course.id }}/assignments/{{assignment.id}}">
+							<button>{{assignment.name}} due {{assignment.dueDate}}</button>
+					</a>
+		</nov-frame>
+
+		
+		<h1>Past</h1>	
+		<nov-frame class="assignments"
+			   ng-repeat="assignment in assignments | pastAssignments">
+					<a href="#/app/courses/{{ course.id }}/assignments/{{assignment.id}}">
+							<button>{{assignment.name}} due {{assignment.dueDate}}</button>
+					</a>
+		</nov-frame>
+	</nov-content>
+
+</ion-view>

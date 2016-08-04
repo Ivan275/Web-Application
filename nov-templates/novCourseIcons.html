@@ -1,0 +1,35 @@
+<div class="topIcons">
+	<div class="individualIcon">
+		<a href="#/app/courses/{{ course.id }}/participation">
+			<button>
+				<img src="css/img/icons_transparent_wide.png" class="iconImageParticipation" alt="participation">
+			</button>
+		</a>
+		<h4>PARTICIPATION</h4>
+	</div>
+	<div class="individualIcon">
+		<a href="#/app/courses/{{ course.id }}/assignments">
+			<button>
+				<img src="css/img/icons_transparent_wide.png" class="iconImageAssignments" alt="assignments">
+			</button>
+		</a>
+		<h4>ASSIGNMENTS</h4>
+	</div>
+	<div class="individualIcon">
+		<a href="#/app/courses/{{ course.id }}/quizzes">
+			<button ng-click="ons.navigator.pushPage('quizzes.html')">
+				<img src="css/img/icons_transparent_wide.png" class="iconImageQuizzes" alt="quizzes">
+			</button>
+		</a>
+		<h4>QUIZZES</h4>
+	</div>
+	<div class="lastIndividualIcon">
+		<a href="#/app/courses/{{ course.id }}/grades">
+			<button>
+				<img src="css/img/icons_transparent_wide.png" class="iconImageGrades" alt="grades">
+			</button>
+		</a>
+		<h4>GRADES</h4>
+	</div>
+	<div class="clear"></div>
+</div>

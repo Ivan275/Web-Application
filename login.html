@@ -1,0 +1,38 @@
+<ion-view title="Novella">
+	<nov-content class="loginBG">   
+		<div class="login">
+		
+			<h1>SIGN IN</h1>
+			<p>Login to your Novella account</p>
+			<div class="list">
+				<!-- Email input -->
+				<label class="email" class="item item-input">
+					<input type="text" placeholder="Email">
+				</label>
+				<!-- Password input -->
+				<label class="password" class="item item-input">
+					<input type="password" placeholder="Password">
+				</label>
+			</div>
+			<!-- Login button box -->
+			<nov-button href="#/app/courses"
+				ng-init="setMenuDrag(false)"
+				ng-click="setMenuDrag(true)"
+				nav-clear>
+				LOGIN
+			</nov-button>
+			
+		</div>	
+		
+	</nov-content>
+	
+			
+		<!-- Bottom sign up bar -->
+		<a class="footerBar"
+			text-align="center"
+			href="#/app/courses">
+				<div class="fakeBar"></div>
+				<h1>CREATE AN ACCOUNT &gt;</h1>
+		</a>
+	
+</ion-view>

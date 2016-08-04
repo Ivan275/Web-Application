@@ -1,0 +1,42 @@
+<ion-side-menus>
+	
+	<!-- Top bar on menu -->
+	<ion-pane ion-side-menu-content>
+		<ion-nav-bar class="bar-stable nav-title-slide-ios7">
+			<ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+		</ion-nav-bar>
+		<ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+	</ion-pane>
+
+	<ion-side-menu side="right">
+		<header class="bar bar-header bar-stable">
+		</header>
+		<nov-content>		
+			<ion-list>
+			
+				<!-- User name -->
+				<ion-item nav-clear 
+						  class="first"
+						  menu-close href="#/app/account">
+							{{ getStudent().name }}
+				</ion-item>
+
+				<!-- Loop through menu options -->
+				<ion-item menu-close 
+						  nav-clear
+						  ng-repeat="course in getStudent().enrolledCourses"
+						  href="#/app/courses/{{ course.id }}">
+							{{ course.name }}
+				</ion-item>
+
+				<!-- Log out -->
+				<ion-item nav-clear 
+						  menu-close 
+						  href="#/app/login">
+							Logout
+				</ion-item>
+				
+			</ion-list>		
+		</nov-content>
+	</ion-side-menu>
+</ion-side-menus>

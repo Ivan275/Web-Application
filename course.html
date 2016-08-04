@@ -1,0 +1,34 @@
+<ion-view title="{{ course.name }}">
+	<ion-nav-buttons side="right">
+	<button menu-toggle="right"class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+
+	<nov-content>
+		<nov-course-icons></nov-course-icons>
+		<h1>Course Materials</h1>
+		<div id="sort-options">
+			<button ng-click="predicate = 'name'; reverse=!reverse">Sort by Name</button>
+			<button ng-click="predicate = 'uploadDate'; reverse=!reverse">Sort by Date</button>
+		</div>
+		Search: <input ng-model="searchText">
+		<nov-frame class="materials"
+			   ng-repeat="material in materials | orderBy:predicate:reverse | filter:searchText">
+					<open-external url="material.url" exit="closeBrowser()" 
+		               load-start="loadStart()"
+		               load-stop="loadStop()"
+		               load-error="loadError()">
+						{{material.name}}
+					</open-external>
+					<ul>
+						<li><b>Uploaded:</b> {{ material.uploadDate }}</li>
+						<li><b>Type:</b> {{ material.fileType }}</li>
+					</ul>
+		</nov-frame>
+
+		
+		<h1>Notifications</h1>	
+		<nov-frame class="notifications">
+		</nov-frame>	
+	</nov-content>
+
+</ion-view>

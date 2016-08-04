@@ -1,0 +1,23 @@
+<ion-view title="Courses">
+	<ion-nav-buttons side="right">
+		<button menu-toggle="right"class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	
+	<nov-content>
+		<h1>Your Courses</h1>
+		
+		<nov-frame class="course"
+				   ng-repeat="course in getStudent().enrolledCourses">
+						<nov-course-button href="#/app/courses/{{ course.id }}">
+							<h1>{{ course.name }}</h1>
+							<h4>{{ course.section + ' ' + course.semester }}</h4>
+						</nov-course-button>
+						<ul>
+							<li><b>Instructor:</b> {{ course.instructor }}</li>
+							<li><b>Role:</b> {{ course.role }}</li>
+						</ul>
+		</nov-frame>
+	   
+	</nov-content>
+	
+</ion-view>
